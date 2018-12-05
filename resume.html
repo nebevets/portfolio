@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+        <meta charset="utf-8"/>
+        <meta name="copyright" content="copyright 2018, Steve Benedict"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+        <title>Resume for Steve Benedict, Web Developer</title>
+        <style>
+            html{
+                background-color: grey;
+            }
+            body {
+                box-sizing: border-box;
+                background-color: whitesmoke;
+                color: rgb(30, 33, 38);
+                margin: auto;
+                max-width: 8.5in;
+                font-family: Tahoma, sans-serif;
+                padding-bottom: 2em;
+            }
+            .contact .item span{
+                vertical-align: text-bottom;
+            }
+            .far, .fas, .fab{
+                text-align: center;
+                width: 20px;
+            }
+            h1{
+                font-weight: 500;
+                font-size: 2.25em;
+            }
+            h2{
+                font-weight: 500;
+                margin: 0.6em 0;
+                border-bottom: 1px solid lightsteelblue;
+            }
+            h3{
+                font-size: smaller;
+                margin-bottom: 0;
+            }
+            ul{
+                margin-top: 0.25em;
+            }
+            header, section{
+                padding-left: 5%;
+                padding-right: 10%;
+            }
+            kbd{
+                background-color: mintcream;
+                border: 2px solid lightsteelblue;
+                border-radius: 5px;
+                padding: 2px;
+                margin: 2px;
+                color: rgb(57, 63, 72);
+                font-weight: bold;
+                line-height: 2em;
+            }
+            header{
+                background-color: lightsteelblue;
+                padding: 10px;
+                border-bottom: 1px solid rgb(57, 63, 72);
+            }
+            .contact{
+                font-size: small;
+                color: rgb(57, 63, 72);
+                float: right;
+                margin-right: 5%;
+            }
+            a:link, a:visited{
+                text-decoration: none;
+                color: inherit;
+            }
+            a:hover{
+                color: rgb(30, 33, 38);
+                text-decoration: underline;
+            }
+            .detail ul, .detail div{
+                font-size: smaller;
+            }
+            li {
+                list-style-type: circle;
+            }
+            figure{
+                margin: 0px;
+                display: inline-block;
+                width: 30%;
+                border-collapse: collapse;
+                vertical-align: top;
+                padding: 0 9px;
+            }
+            figure:nth-of-type(3){
+                border: none;
+            }
+            figcaption{
+                font-size: xx-small;
+                border-bottom: 1px solid rgb(57, 63, 72);
+                margin-bottom: 5px;
+            }
+            @media screen and (max-width:768px){
+                figure{
+                    display: block;
+                    width: auto;                
+                }
+            @media screen and (max-width:443px){
+                .contact{
+                    transform: translateY(15%);
+                }
+            }
+        </style>
+    </head>
+	<body>
+        <header>
+            <div class="contact">
+                <div class="item">
+                    <span class="far fa-address-card"></span>
+                    <span>San Clemente, CA</span>
+                </div>
+                <div class="item">
+                    <span class="fas fa-mobile-alt"></span>
+                    <span>704-819-6901</span>
+                </div>
+
+                <div class="item">
+                    <span class="fas fa-envelope"></span>
+                    <span>steveben@exmsft.com</span>
+                </div>
+
+                <div class="item">
+                    <span class="fab fa-github-square"></span>
+                    <a href="https://github.com/nebevets">github.com/nebevets</a>
+                </div>
+                <div class="item">
+                    <span class="fab fa-linkedin"></span>
+                    <a href="https://www.linkedin.com/in/nebevets/">linkedin.com/in/nebevets</a>
+                </div>
+                <div class="item">
+                    <span class="fas fa-envelope"></span>
+                    <a href="http://stevebenedict.net">stevebenedict.net</a>
+                </div>    
+            </div>
+            <h1 class="name">Steve Benedict</h1>
+        </header>
+        <section class="skills">
+            <h2>Technical Skills</h2>
+            <figure>
+                <figcaption>Strong</figcaption>
+                <kbd>JavaScript</kbd>
+                <kbd>ES6</kbd> 
+                <kbd>Node&nbsp;JS</kbd> 
+                <kbd>JQuery</kbd> 
+                <kbd>AJAX</kbd>
+                <kbd>HTML</kbd>
+                <kbd>CSS</kbd>
+                <kbd>MySQL</kbd>
+            </figure>
+            <figure>
+                <figcaption>Experienced</figcaption>
+                <kbd>PHP</kbd>
+                <kbd>React</kbd>
+                <kbd>C</kbd>
+                <kbd>Bootstrap</kbd>
+                <kbd>Testing</kbd>
+                <kbd>Axios</kbd>
+                <kbd>AWS&nbsp;EC2</kbd>
+                <kbd>Apache2</kbd>
+            </figure>
+            <figure>
+                <figcaption>Tools</figcaption>
+                <kbd>Git</kbd>
+                <kbd>Github</kbd>
+                <kbd>VS&nbsp;Code</kbd>
+
+                <kbd>Postman</kbd>
+                <kbd>Meistertask</kbd>
+                <kbd>Chrome&nbsp;Dev&nbsp;Tools</kbd>
+            </figure>
+        </section>
+        <section class="projects">
+            <h2>Projects</h2>
+            <div class="detail">
+                <h3>Squirrel Receipts, 2018</h3>
+                <ul>
+                    <li>
+                        Set up a <strong>MySQL</strong>, <strong>Express</strong>, <strong>React</strong>, <strong>Node JS</strong>
+                        development environment for purposes of creating a <strong>CMS</strong> for retail store receipts.
+                    </li>
+                    <li>
+                        Designed and created a relational <strong>MySQL</strong> database with stored procedure
+                        <strong>SQL</strong> queries for all CRUD (Create, Read, Update, Delete) operations.
+                    </li>
+                    <li>
+                        Constructed a <strong>Node JS</strong> web server, using <strong>Express</strong>, to create endpoints for
+                        <strong>MySQL</strong> database.
+                    </li>
+                    <li>
+                        Secured endpoints for user login and data in <strong>Node JS</strong> with <strong>Express Sessions</strong>.
+                    </li>
+                    <li>
+                        Supplied an API for a React front end interface using <strong>JSON</strong>.
+                    </li>
+                </ul>
+            </div>
+            <div class="detail">
+                <h3>EyeSpy, 2018</h3>
+                <ul>
+                    <li>Created a <strong>mobile responsive</strong> guessing game app using an
+                        <strong>artificial intelligence API</strong> to compare images.</li>
+                    <li>Implemented 3 additional <strong>APIs</strong> using
+                        <strong>Javascript</strong> and <strong>JQuery</strong> to
+                        enhance game play.</li>
+                    <li>Developed using <strong>Agile Methodoligies</strong> during a 48 hour team "hackaton."</li>
+                    <li>Built with <strong>HTML5</strong>,
+                     <strong>CSS</strong>, <strong>Javascript</strong>, <strong>JQuery</strong>,
+                     <strong>AJAX</strong>, <strong>JSON</strong>, <strong>Bootstrap</strong>, and <strong>Git</strong>.</li>
+                    </ul> 
+            </div>
+            <div class="detail">
+                <h3>Crypto Match, 2018</h3>
+                <ul>
+                    <li>
+                        Designed a <strong>mobile responsive</strong> matching game using <strong>JQuery</strong>
+                        and <strong>CSS</strong>, where a player matches hidden cryptocurrency icons.
+                    </li>
+                    <li>
+                        Developed a core <strong>Javascript</strong> function used to
+                        simulate volitale cryptocurrency prices.
+                    </li>
+                    <li>
+                        Formulated awards for coin matches, with the amounts based on accuracy, using a core <strong>Javascript</strong>
+                        function.
+                    </li>
+                    <li>Displayed the game interface using <strong>HTML5</strong>, <strong>CSS</strong>, and <strong>JQuery</strong>
+                        <strong>DOM</strong> creation.</li>
+                </ul>
+            </div>
+        </section>
+        <section class="experience">
+            <h2>Professional Experience</h2>
+            <div class="detail">
+                <h3>President/CEO, Benedict International Corp. (San Clemente, CA)</h3>
+                <ul>
+                    <li>Investment, design, construction, and property management for single family residences.</li>
+                </ul>
+            </div>
+        </section>
+        <section class="education">
+            <h2>Education</h2>
+            <div class="detail">
+                <h3>Learning Fuze (Irvine, CA)</h3>
+                <ul>
+                    <li>
+                        Completed 4 Weeks of <strong>HTML</strong>/<strong>CSS</strong>/<strong>JavaScript</strong> training.
+                    </li>
+                    <li>
+                        Graduated from a 12 week full stack web development training program.
+                    </li>
+                    <li>
+                        Built personal and collaborative web applications using <strong>Agile Methodologies</strong>. 
+                    </li>
+                </ul>
+            </div>
+            <div class="detail">
+                <h3>Appalachian State University (Boone, NC)</h3>
+                <ul>
+                    <li>
+                        Bachelor of Science in Business Administration-Marketing, with a concentration in Computer Science.
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <section class="personal">
+            <h2>Personal</h2>
+            <div class="detail">
+                <div>
+                    I enjoy the beach, surfing, hiking, and making electronic music. I love doing volunteer work,
+                    especially teaching elementary school children how to use computers.
+                </div>       
+            </div>
+        </section>
+    </body> 
+</html>
