@@ -113,48 +113,6 @@ NOTE: This is active js file of the template.
         });
         
         /*================================
-                active counter
-        =================================*/
-		$('.stat-area').on('inview', function(event, visible, visiblePartX, visiblePartY) {
-			if (visible) {
-				$(this).find('.counter').each(function () {
-					var $this = $(this);
-					$({ Counter: 0 }).animate({ Counter: $this.text() }, {
-						duration: 2000,
-						easing: 'swing',
-						step: function () {
-							$this.text(Math.ceil(this.Counter));
-						}
-					});
-				});
-				$(this).unbind('inview');
-			}
-		});
-        
-        /*================================
-               active testimonial
-        =================================*/
-        $(".testimonial-list").owlCarousel({
-            loop:true,
-            margin:30,
-            nav:false,
-            dots:true,
-            autoplay:true,
-            autoplayHoverPause:true,
-            responsive:{
-                0:{
-                    items:1
-                },
-                600:{
-                    items:2
-                },
-                1000:{
-                    items:2
-                }
-            }
-        });
-        
-        /*================================
               logo carousel active
         =================================*/
         $(".logo-carousel").owlCarousel({
