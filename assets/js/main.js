@@ -13,7 +13,7 @@ NOTE: This is the custom jQuery file for the template
 	"use strict";
     
     var $window = $(window),
-            $body = $('body');
+        $body = $('body');
     
     jQuery(document).ready(function($){
 
@@ -100,6 +100,38 @@ NOTE: This is the custom jQuery file for the template
         positionProperty: 'position',
         horizontalScrolling: false
     });
+    
+    /*=========================================
+                form AJAX
+    =======================================*/
+    const handleFormSubmit = (event)=>{
+        event.preventDefault();
+		const ajaxOptions = {
+            method:"post",
+            url:"contact.php",
+            data: {
+                name: $('input[name="name"]').val(),
+                email: $('input[name="email"]').val(),
+                subject: $('input[name="subject"]').val(),
+                body: $('textarea[name="body"]').val()
+            },
+            success: response =>{
+                console.log(response);
+            }
+        }
+        $.ajax(ajaxOptions);
+    }
+    
+    $('form').on('submit', handleFormSubmit);
+    /*=========================================
+                phone number
+    =======================================*/
+    const handlePhoneClick = (event)=>{
+        event.preventDefault();
+		$('#phoneNumber').text('(704) 819-6901');
+    }
+    
+    $('#phoneNumber').on('click', handlePhoneClick);
     /*=========================================
                 jQuery mixItUp
     =======================================*/
@@ -139,7 +171,6 @@ NOTE: This is the custom jQuery file for the template
          $('.spinner').fadeOut(); 
         $('.preloader').delay(350).fadeOut(500);
         $body.delay(350).css({'overflow':'visible'});
-            
         });
 
 
