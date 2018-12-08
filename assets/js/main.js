@@ -107,8 +107,9 @@ NOTE: This is the custom jQuery file for the template
     const handleFormSubmit = (event)=>{
         event.preventDefault();
 		const ajaxOptions = {
-            method:"post",
-            url:"contact.php",
+            method:'post',
+            url:'contact.php',
+            dataType: 'json',
             data: {
                 name: $('input[name="name"]').val(),
                 email: $('input[name="email"]').val(),
@@ -116,7 +117,13 @@ NOTE: This is the custom jQuery file for the template
                 body: $('textarea[name="body"]').val()
             },
             success: response =>{
-                console.log(response);
+                if(response.success){
+                    $('div.messages').text('Thank you. Your message has been sent. Please expect a response by the next business day.').css({'text-align':'center', 'color':'green'});
+                }
+                else if(response.error){
+                    $('div.messages').text("I am sorry, there was an error: " + response.error).css({'text-align':'center', 'color':'red'});
+                }
+                $('form')[0].reset();
             }
         }
         $.ajax(ajaxOptions);

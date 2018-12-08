@@ -40,11 +40,9 @@ $mail->Body    = $_POST['body'];
 $mail->AltBody = $_POST['body'];
 
 if(!$mail->send()) {
-    //echo 'Message could not be sent.';
     $resp->error =  'Mailer Error: ' . $mail->ErrorInfo;
 } else {
     $resp->success = true;
-    //echo 'Message has been sent';
 }
 $resp = json_encode($resp);
 echo $resp;
