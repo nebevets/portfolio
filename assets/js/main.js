@@ -111,6 +111,7 @@ NOTE: This is the custom jQuery file for the template
             url:'contact.php',
             dataType: 'json',
             data: {
+                // need to regex these values. pattern on input sucks
                 name: $('input[name="name"]').val(),
                 email: $('input[name="email"]').val(),
                 subject: $('input[name="subject"]').val(),
