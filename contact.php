@@ -1,75 +1,49 @@
 <?php
-/*
- *  CONFIGURE EVERYTHING HERE
- */
+require_once('email_config.php');
+require('phpmailer/PHPMailer/PHPMailerAutoload.php');
+$resp = new stdClass();
+$resp->success = false;
+$mail = new PHPMailer;
+$mail->SMTPDebug = 0;           // Enable verbose debug output. Change to 0 to disable debugging output.
 
-// an email address that will be in the From field of the email.
-$from = 'Demo contact form <demo@domain.com>';
+$mail->isSMTP();                // Set mailer to use SMTP.
+$mail->Host = 'smtp.gmail.com'; // Specify main and backup SMTP servers.
+$mail->SMTPAuth = true;         // Enable SMTP authentication
 
-// an email address that will receive the email with the output of the form
-$sendTo = 'Demo contact form <demo@domain.com>';
 
-// subject of the email
-$subject = 'New message from contact form';
+$mail->Username = EMAIL_USER;   // SMTP username
+$mail->Password = EMAIL_PASS;   // SMTP password
+$mail->SMTPSecure = 'tls';      // Enable TLS encryption, `ssl` also accepted, but TLS is a newer more-secure encryption
+$mail->Port = 587;              // TCP port to connect to
+$options = array(
+    'ssl' => array(
+        'verify_peer' => false,
+        'verify_peer_name' => false,
+        'allow_self_signed' => true
+    )
+);
+$mail->smtpConnect($options);
+$mail->From = $_POST['email'];  // sender's email address (shows in "From" field)
+$mail->FromName = $_POST['name'];   // sender's name (shows in "From" field)
+$mail->addAddress('sbenedict@hotmail.com');  // Add a recipient
+//$mail->addAddress('ellen@example.com');                        // Name is optional
+$mail->addReplyTo($_POST['email']);                          // Add a reply-to address
+//$mail->addCC('cc@example.com');
+//$mail->addBCC('bcc@example.com');
 
-// form field names and their translations.
-// array variable name => Text to appear in the email
-$fields = array('name' => 'Name', 'email' => 'Email', 'message' => 'Message'); 
+//$mail->addAttachment('/var/tmp/file.tar.gz');         // Add attachments
+//$mail->addAttachment('/tmp/image.jpg', 'new.jpg');    // Optional name
+$mail->isHTML(true);                                  // Set email format to HTML
 
-// message that will be displayed when everything is OK :)
-$okMessage = 'Contact form successfully submitted. Thank you, I will get back to you soon!';
+$mail->Subject = $_POST['subject'];
+$mail->Body    = $_POST['body'];
+$mail->AltBody = $_POST['body'];
 
-// If something goes wrong, we will display this message.
-$errorMessage = 'There was an error while submitting the form. Please try again later';
-
-/*
- *  LET'S DO THE SENDING
- */
-
-// if you are not debugging and don't need error reporting, turn this off by error_reporting(0);
-error_reporting(E_ALL & ~E_NOTICE);
-
-try
-{
-
-    if(count($_POST) == 0) throw new \Exception('Form is empty');
-            
-    $emailText = "You have a new message from your contact form\n=============================\n";
-
-    foreach ($_POST as $key => $value) {
-        // If the field exists in the $fields array, include it in the email 
-        if (isset($fields[$key])) {
-            $emailText .= "$fields[$key]: $value\n";
-        }
-    }
-
-    // All the neccessary headers for the email.
-    $headers = array('Content-Type: text/plain; charset="UTF-8";',
-        'From: ' . $from,
-        'Reply-To: ' . $from,
-        'Return-Path: ' . $from,
-    );
-    
-    // Send email
-    mail($sendTo, $subject, $emailText, implode("\n", $headers));
-
-    $responseArray = array('type' => 'success', 'message' => $okMessage);
+if(!$mail->send()) {
+    $resp->error =  'Mailer Error: ' . $mail->ErrorInfo;
+} else {
+    $resp->success = true;
 }
-catch (\Exception $e)
-{
-    $responseArray = array('type' => 'danger', 'message' => $errorMessage);
-}
-
-
-// if requested by AJAX request return JSON response
-if (!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest') {
-    $encoded = json_encode($responseArray);
-
-    header('Content-Type: application/json');
-
-    echo $encoded;
-}
-// else just display the message
-else {
-    echo $responseArray['message'];
-}
+$resp = json_encode($resp);
+echo $resp;
+?>

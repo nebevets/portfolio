@@ -13,7 +13,7 @@ NOTE: This is the custom jQuery file for the template
 	"use strict";
     
     var $window = $(window),
-            $body = $('body');
+        $body = $('body');
     
     jQuery(document).ready(function($){
 
@@ -86,7 +86,7 @@ NOTE: This is the custom jQuery file for the template
 
         $(function() {
             element.typed({
-                strings: ["Alex Smith.", "Designer.", "Developer.", "Freelancer."],
+                strings: ["Steve Benedict.", "a Web Developer.", "a Coder.", "a Builder."],
                 typeSpeed: 100,
                 loop: true,
             });
@@ -100,15 +100,46 @@ NOTE: This is the custom jQuery file for the template
         positionProperty: 'position',
         horizontalScrolling: false
     });
-        
-    /*=============================
-        CounterUp
-    ==============================*/
-    $('.counter').counterUp({
-        delay: 4,
-         time: 800
-    });
-        
+    
+    /*=========================================
+                form AJAX
+    =======================================*/
+    const handleFormSubmit = (event)=>{
+        event.preventDefault();
+		const ajaxOptions = {
+            method:'post',
+            url:'contact.php',
+            dataType: 'json',
+            data: {
+                // need to regex these values. pattern on input sucks
+                name: $('input[name="name"]').val(),
+                email: $('input[name="email"]').val(),
+                subject: $('input[name="subject"]').val(),
+                body: $('textarea[name="body"]').val()
+            },
+            success: response =>{
+                if(response.success){
+                    $('div.messages').text('Thank you. Your message has been sent. Please expect a response by the next business day.').css({'text-align':'center', 'color':'green'});
+                }
+                else if(response.error){
+                    $('div.messages').text("I am sorry, there was an error: " + response.error).css({'text-align':'center', 'color':'red'});
+                }
+                $('form')[0].reset();
+            }
+        }
+        $.ajax(ajaxOptions);
+    }
+    
+    $('form').on('submit', handleFormSubmit);
+    /*=========================================
+                phone number
+    =======================================*/
+    const handlePhoneClick = (event)=>{
+        event.preventDefault();
+		$('#phoneNumber').text('(704) 819-6901');
+    }
+    
+    $('#phoneNumber').on('click', handlePhoneClick);
     /*=========================================
                 jQuery mixItUp
     =======================================*/
@@ -148,7 +179,6 @@ NOTE: This is the custom jQuery file for the template
          $('.spinner').fadeOut(); 
         $('.preloader').delay(350).fadeOut(500);
         $body.delay(350).css({'overflow':'visible'});
-            
         });
 
 
