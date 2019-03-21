@@ -12,8 +12,8 @@
             }
             body {
                 box-sizing: border-box;
-                background-color: whitesmoke;
-                color: rgb(30, 33, 38);
+                background-color: aliceblue;
+                color: rgb(34, 35, 36);
                 margin: auto;
                 max-width: 8.5in;
                 font-family: Tahoma, sans-serif;
@@ -29,15 +29,21 @@
             h1{
                 font-weight: 500;
                 font-size: 2.25em;
+                padding-left: 10px;
             }
             h2{
+                font-size: 1.25em;
                 font-weight: 500;
                 margin: 0.6em 0;
-                border-bottom: 1px solid lightsteelblue;
+                border-bottom: 1px solid rgb(118, 142, 169);
             }
             h3{
                 font-size: smaller;
                 margin-bottom: 0;
+            }
+            h3 span{
+                font-size: smaller;
+                font-weight: 100;
             }
             .detail div.sites{
                 font-size: x-small;
@@ -56,8 +62,8 @@
                 padding-right: 10%;
             }
             kbd{
-                background-color: mintcream;
-                border: 2px solid lightsteelblue;
+                background-color: rgb(238, 238, 238);
+                border: 2px solid rgb(118, 142, 169);
                 border-radius: 5px;
                 padding: 2px;
                 margin: 2px;
@@ -66,15 +72,15 @@
                 line-height: 2em;
             }
             header{
-                background-color: lightsteelblue;
+                background-color: rgb(211, 228, 242);
                 padding: 10px;
-                border-bottom: 1px solid rgb(57, 63, 72);
+                border-bottom: 1px solid rgb(34, 35, 36);
             }
             .contact{
                 font-size: small;
                 color: rgb(57, 63, 72);
                 float: right;
-                margin-right: 5%;
+                margin-right: 2%;
             }
             a:link, a:visited{
                 text-decoration: none;
@@ -112,13 +118,14 @@
                     width: auto;                
                 }
             @media screen and (max-width:443px){
-                .contact{
-                    transform: translateY(15%);
+                h1 {
+                    margin-top: 0;
+                    padding-left: 0;
                 }
             }
-            @media screen and (max-width:340px){
+            @media screen and (max-width:350px){
                 .contact{
-                    transform: translateY(5%);
+                    transform: translateY(-3%);
                 }
                 h1{
                     font-size: 1.75em;
@@ -153,8 +160,8 @@
                 </div>
                 <div class="item">
                     <span class="fas fa-link"></span>
-                    <a href="http://stevebenedict.net" target="_blank">stevebenedict.net</a>
-                </div>    
+                    <a href="http://stevebenedict.net" target="_blank">portfolio: stevebenedict.net</a>
+                </div>
             </div>
             <h1 class="name">Steve Benedict</h1>
         </header>
@@ -272,9 +279,15 @@
         <section class="experience">
             <h2>Professional Experience</h2>
             <div class="detail">
-                <h3>President/CEO, Benedict International Corp. (San Clemente, CA)</h3>
+                <h3>President/CEO, Benedict International Corp. (San Clemente, CA) <span>(present)</span></h3>
                 <ul>
-                    <li>Investment, design, construction, and property management for single family residences.</li>
+                    <li>Investment, <strong>design</strong>, construction, and property <strong>management</strong> for single family residences.</li>
+                </ul>
+            </div>
+            <div class="detail">
+                <h3>Microsoft</h3>
+                <ul>
+                    <li>Previous experience as a <strong>program manager</strong>, <strong>software testing lead</strong>, <strong>software tester</strong>, software support training <strong>instructor</strong>, software support escalation <strong>lead</strong>/<strong>mentor</strong>, and software support <strong>engineer</strong>.</li>
                 </ul>
             </div>
         </section>
@@ -303,6 +316,7 @@
                 </ul>
             </div>
         </section>
+        <!--
         <section class="personal">
             <h2>Personal</h2>
             <div class="detail">
@@ -312,5 +326,6 @@
                 </div>       
             </div>
         </section>
+        -->
     </body> 
 </html>
