@@ -12,8 +12,8 @@
             }
             body {
                 box-sizing: border-box;
-                background-color: whitesmoke;
-                color: rgb(30, 33, 38);
+                background-color: rgb(248, 252, 255);
+                color: rgb(34, 35, 36);
                 margin: auto;
                 max-width: 8.5in;
                 font-family: Tahoma, sans-serif;
@@ -29,15 +29,21 @@
             h1{
                 font-weight: 500;
                 font-size: 2.25em;
+                padding-left: 10px;
             }
             h2{
+                font-size: 1.25em;
                 font-weight: 500;
                 margin: 0.6em 0;
-                border-bottom: 1px solid lightsteelblue;
+                border-bottom: 1px solid rgb(118, 142, 169);
             }
             h3{
                 font-size: smaller;
                 margin-bottom: 0;
+            }
+            h3 span{
+                font-size: smaller;
+                font-weight: 100;
             }
             .detail div.sites{
                 font-size: x-small;
@@ -56,8 +62,8 @@
                 padding-right: 10%;
             }
             kbd{
-                background-color: mintcream;
-                border: 2px solid lightsteelblue;
+                background-color: aliceblue;
+                border: 1px solid rgb(118, 142, 169);
                 border-radius: 5px;
                 padding: 2px;
                 margin: 2px;
@@ -66,15 +72,15 @@
                 line-height: 2em;
             }
             header{
-                background-color: lightsteelblue;
+                background-color: rgb(211, 228, 242);
                 padding: 10px;
-                border-bottom: 1px solid rgb(57, 63, 72);
+                border-bottom: 1px solid rgb(34, 35, 36);
             }
             .contact{
                 font-size: small;
                 color: rgb(57, 63, 72);
                 float: right;
-                margin-right: 5%;
+                margin-right: 2%;
             }
             a:link, a:visited{
                 text-decoration: none;
@@ -89,6 +95,7 @@
             }
             li {
                 list-style-type: circle;
+                padding: 2px 0;
             }
             figure{
                 margin: 0px;
@@ -112,13 +119,14 @@
                     width: auto;                
                 }
             @media screen and (max-width:443px){
-                .contact{
-                    transform: translateY(15%);
+                h1 {
+                    margin-top: 0;
+                    padding-left: 0;
                 }
             }
-            @media screen and (max-width:340px){
+            @media screen and (max-width:350px){
                 .contact{
-                    transform: translateY(5%);
+                    transform: translateY(-3%);
                 }
                 h1{
                     font-size: 1.75em;
@@ -153,8 +161,8 @@
                 </div>
                 <div class="item">
                     <span class="fas fa-link"></span>
-                    <a href="http://stevebenedict.net" target="_blank">stevebenedict.net</a>
-                </div>    
+                    <a href="http://stevebenedict.net" target="_blank">portfolio: stevebenedict.net</a>
+                </div>
             </div>
             <h1 class="name">Steve Benedict</h1>
         </header>
@@ -201,22 +209,22 @@
                 </h3>
                 <ul>
                     <li>
-                        Set up a <strong>MySQL</strong>, <strong>Express</strong>, <strong>React</strong>, <strong>Node JS</strong>
-                        development environment for purposes of creating a <strong>CMS</strong> for retail store receipts.
+                        Built a <strong>Content Management System (CMS)</strong> for purchase receipts.
                     </li>
                     <li>
-                        Designed and created a relational <strong>MySQL</strong> database with stored procedure
-                        <strong>SQL</strong> queries for all CRUD (Create, Read, Update, Delete) operations.
+                        Designed and created a relational <strong>MySQL</strong> database schema.
+                    </li>
+                    <li> 
+                        Composed stored procedure <strong>SQL</strong> queries for CRUD operations.
                     </li>
                     <li>
-                        Constructed a <strong>Node JS</strong> web server, using <strong>Express</strong>, to create endpoints for
-                        <strong>MySQL</strong> database.
+                        Constructed a <strong>Node JS</strong> web server, using <strong>Express</strong>, to create endpoints.
                     </li>
                     <li>
                         Secured endpoints for user login and data in <strong>Node JS</strong> with <strong>Express Sessions</strong>.
                     </li>
                     <li>
-                        Supplied an API for a React front end interface using <strong>JSON</strong>.
+                        Supplied an <strong>API</strong> for a <strong>React</strong> front end interface using <strong>JSON</strong>.
                     </li>
                 </ul>
 
@@ -228,7 +236,7 @@
             <div class="detail">
                 <h3>EyeSpy, 2018</h3>
                 <ul>
-                    <li>Created a <strong>mobile responsive</strong> guessing game app using an
+                    <li>Created a <strong>mobile responsive</strong> game using an
                         <strong>artificial intelligence API</strong> to compare images.</li>
                     <li>Implemented 3 additional <strong>APIs</strong> using
                         <strong>Javascript</strong> and <strong>JQuery</strong> to
@@ -248,8 +256,8 @@
                 <h3>Crypto Match, 2018</h3>
                 <ul>
                     <li>
-                        Designed a <strong>mobile responsive</strong> matching game using <strong>JQuery</strong>
-                        and <strong>CSS</strong>, where a player matches hidden cryptocurrency icons.
+                        Designed a <strong>mobile responsive</strong> game with <strong>JQuery</strong>
+                        and <strong>CSS</strong>, where players match cryptocurrency icons.
                     </li>
                     <li>
                         Developed a core <strong>Javascript</strong> function used to
@@ -272,9 +280,15 @@
         <section class="experience">
             <h2>Professional Experience</h2>
             <div class="detail">
-                <h3>President/CEO, Benedict International Corp. (San Clemente, CA)</h3>
+                <h3>President/CEO, Benedict International Corp. (San Clemente, CA) <span>(present)</span></h3>
                 <ul>
-                    <li>Investment, design, construction, and property management for single family residences.</li>
+                    <li>Investment, <strong>design</strong>, construction, and property <strong>management</strong> for single family residences.</li>
+                </ul>
+            </div>
+            <div class="detail">
+                <h3>Microsoft (Redmond, WA)</h3>
+                <ul>
+                    <li>Previous experience as a <strong>program manager</strong>, <strong>software testing lead</strong>, <strong>software tester</strong>, software support training <strong>instructor</strong>, software support escalation <strong>lead</strong>/<strong>mentor</strong>, and software support <strong>engineer</strong>.</li>
                 </ul>
             </div>
         </section>
@@ -303,6 +317,7 @@
                 </ul>
             </div>
         </section>
+        <!--
         <section class="personal">
             <h2>Personal</h2>
             <div class="detail">
@@ -312,5 +327,6 @@
                 </div>       
             </div>
         </section>
+        -->
     </body> 
 </html>
